@@ -46,7 +46,7 @@ app.post('/charge',(req,res)=>{
         customer:customer.id,
 
     }))
-    .then(charge => res.render('Success'));
+    .then(charge => res.render('success'));
 })
 
 
