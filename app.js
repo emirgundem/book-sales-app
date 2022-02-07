@@ -33,7 +33,6 @@ app.get('/success',(req,res)=>{
 
 app.post('/charge',(req,res)=>{
     const amount = 100;
-    
     stripe.customers.create({
         email: req.body.stripeEmail,
         source: req.body.stripeToken
@@ -44,10 +43,13 @@ app.post('/charge',(req,res)=>{
         description : 'Web development E-book',
         currency:'usd',
         customer:customer.id,
-
     }))
+
     .then(charge => res.render('success'));
 })
+
+
+
 
 
 const port = process.env.PORT || 5000;
