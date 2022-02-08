@@ -27,10 +27,6 @@ app.get('/',(req,res)=>{
 })
 
 
-app.get('/success',(req,res)=>{
-    res.render('success');
-})
-
 app.post('/charge',(req,res)=>{
     const amount = 100;
     stripe.customers.create({
@@ -47,6 +43,13 @@ app.post('/charge',(req,res)=>{
 
     .then(charge => res.render('success'));
 })
+
+
+
+app.get('/success',(req,res)=>{
+    res.render('success');
+})
+
 
 
 
